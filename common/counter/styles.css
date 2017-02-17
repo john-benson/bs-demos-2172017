@@ -1,0 +1,12 @@
+.next-amount {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  font-size: 3em;
+  opacity: 0;
+}
+
+.counter-wrapper {
+  position: relative;
+  width: 225px;
+}

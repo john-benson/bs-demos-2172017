@@ -1,0 +1,1 @@
+webpackJsonp([2],{347:function(e,n,t){"use strict";var r=t(5),c=function(e){var n=e.msg;return r.createElement("div",null,"Hello ",n)};e.exports=c}});
