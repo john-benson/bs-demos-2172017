@@ -35,7 +35,7 @@ module.exports = {
       filename: 'styles.css',
       allChunks: true
     }),
-    new webpack.optimize.UglifyJsPlugin({
+    /*new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       beautify: false,
       mangle: {
@@ -46,6 +46,6 @@ module.exports = {
         screw_ie8: true
       },
       comments: false
-    })
+    })*/
   ]
 };

@@ -1,1 +1,95 @@
-webpackJsonp([1],{346:function(t,e,n){"use strict";var o=n(128).connect,r=n(158),c=n(349),u=function(t,e){return{count:t.getIn(["counter","count"]),lastAmount:t.getIn(["counter","lastAmount"])}},a={onClick:r.incrementCounter};t.exports=o(u,a)(c)},349:function(t,e,n){"use strict";var o=n(5),r=n(19).Link;n(360);var c=function(t){var e=t.count,n=t.onClick,c=(t.lastAmount,function(){return n(Math.floor(10*Math.random()))});return o.createElement("div",{className:"counter-wrapper"},o.createElement("h2",null,e),o.createElement("button",{onClick:c},"Increment"),o.createElement("div",null,o.createElement(r,{to:"/about"},"About Us")," |  ",o.createElement(r,{to:"/hello"},"Hello World")," |  ",o.createElement(r,{to:"/charts"},"Charts")))};t.exports=c},360:function(t,e){}});
+webpackJsonp([1],{
+
+/***/ 346:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var connect = __webpack_require__(128).connect;
+var actions = __webpack_require__(158);
+var Counter = __webpack_require__(349);
+
+var mapProps = function mapProps(state, props) {
+  return {
+    count: state.getIn(['counter', 'count']),
+    lastAmount: state.getIn(['counter', 'lastAmount'])
+  };
+};
+
+var mapDispatch = {
+  onClick: actions.incrementCounter
+};
+
+module.exports = connect(mapProps, mapDispatch)(Counter);
+
+/***/ }),
+
+/***/ 349:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var React = __webpack_require__(5);
+var Link = __webpack_require__(19).Link;
+__webpack_require__(360);
+
+var Counter = function Counter(_ref) {
+  var count = _ref.count,
+      onClick = _ref.onClick,
+      lastAmount = _ref.lastAmount;
+
+  var finalOnClick = function finalOnClick() {
+    return onClick(Math.floor(Math.random() * 10));
+  };
+
+  return React.createElement(
+    'div',
+    { className: 'counter-wrapper' },
+    React.createElement(
+      'h2',
+      null,
+      count
+    ),
+    React.createElement(
+      'button',
+      { onClick: finalOnClick },
+      'Increment'
+    ),
+    React.createElement(
+      'div',
+      null,
+      React.createElement(
+        Link,
+        { to: '/about' },
+        'About Us'
+      ),
+      ' |  ',
+      React.createElement(
+        Link,
+        { to: '/hello' },
+        'Hello World'
+      ),
+      ' |  ',
+      React.createElement(
+        Link,
+        { to: '/charts' },
+        'Charts'
+      )
+    )
+  );
+};
+
+module.exports = Counter;
+
+/***/ }),
+
+/***/ 360:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ })
+
+});
